@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Question1_1</title>
+        <script type="text/javascript" src="common/dojo.js" />
+        <script></script>
+        <script type="text/javascript" src="common/functions.js" />
+        <script></script>
+        <script type="text/javascript">
+
+        </script>
+    </head>
+    <body onload="getQuestion()">
+        
+        <h1>Question1_1</h1>
+        <h3>Based on the tables below, write the required SQL expression.</h3>
+        <table border="1" rules="cols">
+            <thead>
+                <tr >
+                    <th><font color="navy">Table Name</th>
+                    <th>Schema</th>
+                </tr>;
+            </thead>
+            <tbody>
+                <tr>&nbsp;
+                    <td><div>Employee</div></td>
+                    <td><div onclick="getSchema('Employee')" id="Employee">==></div></td>
+                </tr>
+                <tr>
+                    <td align=""><div>Works</div></td>
+                    <td><div onclick="getSchema('Works')" id="Works">==></div></td>
+                </tr>
+                <tr>
+                    <td><a href="ShowDB?tableName=Q1_Company" target="_blank">Q1_Company</a></td>
+                </tr>
+                <tr>
+                    <td><a href="ShowDB?tableName=Q1_Manages" target="_blank">Q1_Manages</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <font color="gray">click table names to view the table</font>
+        
+        <br/><input type="hidden" value="11" id="question_No" />
+        <h3>Task: <div id="QuestionBody"></div></h3>
+        <h5 onclick="getAnswer()">Correct Answer: <div id="AnswerBody"></div><font color="gray">
+            you may click to get correct answer, but this action will count no credit.
+        </font><br/></h5>
+        <textarea id="QueryString" rows="6" cols="40">SELECT *
+FROM Q1_Employee</textarea>
+        <input type="submit" onmouseup="makeRequest()" value="Try" name="submit" />
+        <input type="submit" onclick="CheckAnswer()" value="Answer" name="submit" />
+        <br/><br/><div id="QueryResult"/>
+        
+    </body>
+</html>
